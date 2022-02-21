@@ -19,7 +19,15 @@ body{
     }
 
     .menu-list{
-        
+        display: none;
+    }
+
+    .gallery{
+        width: 100vw;
+    }
+
+    .caption{
+        width: 100vw;
     }
 }
 
@@ -40,5 +48,28 @@ body{
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .container{
+        width: 80vw;
+        margin: auto;
+    }
 
+    .menu{
+        display: flex;
+    }
+
+    .icon-menu{
+        display: none;
+    }
+
+    .menu-list{
+        display: flex;
+    }
+
+    .gallery{
+        width: 100vw;
+    }
+
+    .caption{
+        width: 100vw;
+    }
 }
