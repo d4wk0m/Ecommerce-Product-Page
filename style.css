@@ -10,6 +10,17 @@ body{
         width: 100vw;
     }
 
+    .menu{
+        display: flex;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+
+    .menu{
+        display: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
