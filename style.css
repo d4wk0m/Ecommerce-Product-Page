@@ -51,7 +51,38 @@ body{
     }
 
     .menu-list{
-        display: none;
+        height: 100%;
+        width: 0px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4vw;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 15vw;
+        font-weight: 700;
+        font-size: 6vw;
+    }
+
+    .menu-list .closebtn {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        font-size: 12vw;
+        margin-left: 15px;
+      }
+
+    .menu-list a{
+        text-decoration: none;
+        color: hsl(220, 13%, 13%);
+    }
+
+    .butt a{
+        color: hsl(219, 9%, 45%);
     }
 
     .logo-img img{

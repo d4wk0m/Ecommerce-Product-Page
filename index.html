@@ -11,18 +11,21 @@
   <div class="container">
     <div class="menu">
       <div class="menu-left">
-        <div class="icon-menu">
+        <div class="icon-menu" onclick="openNav()">
           <img src="./images/icon-menu.svg" alt="menu">
         </div>
         <div class="logo-img">
           <img src="./images/logo.svg" alt="logo">
         </div>
-        <div class="menu-list">
-          <span class="menu-item">Collections</span>
-          <span class="menu-item">Men</span>
-          <span class="menu-item">Women</span>
-          <span class="menu-item">About</span>
-          <span class="menu-item">Contact</span>
+        <div class="menu-list" id="nav">
+          <div class="butt">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          </div>
+          <a class="menu-item">Collections</a>
+          <a class="menu-item">Men</a>
+          <a class="menu-item">Women</a>
+          <a class="menu-item">About</a>
+          <a class="menu-item">Contact</a>
         </div>
       </div>
       <div class="menu-right">

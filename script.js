@@ -59,3 +59,15 @@ function cart(n){
         document.getElementById('quantity').textContent = a;
     }
 }
+
+function openNav() {
+    a = screen.width / 2;
+    a += "px";
+    document.getElementById("nav").style.width = a;
+    document.getElementById("nav").style.paddingLeft = "5vw";
+  }
+  
+  function closeNav() {
+    document.getElementById("nav").style.width = "0";
+    document.getElementById("nav").style.paddingLeft = "0";
+  }
