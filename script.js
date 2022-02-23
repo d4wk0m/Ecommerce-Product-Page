@@ -24,8 +24,7 @@ if (screen.width > 600) {
     }
 } 
 else {
-
-var slideIndex = 1;
+    var slideIndex = 1;
     showSlides(slideIndex);
 
     // Next/previous controls
@@ -48,6 +47,15 @@ var slideIndex = 1;
     }
     slides[slideIndex-1].style.display = "block";
     }
+}
 
-    
+function cart(n){
+    prv = document.getElementById('quantity').textContent;
+    a = parseInt(prv) + n;
+    if (a < 0){
+        document.getElementById('quantity').textContent = 0;
+    }
+    else{
+        document.getElementById('quantity').textContent = a;
+    }
 }

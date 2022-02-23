@@ -49,8 +49,8 @@
           <div class="mySlides">
             <img src="./images/image-product-4.jpg" style="width:100%">
           </div>
-          <a class="prev" onclick="plusSlides(-1)"><img src="./images/icon-previous.svg" alt=""></a>
-          <a class="next" onclick="plusSlides(1)"><img src="./images/icon-next.svg" alt=""></a>
+          <a class="prev" id="prev" onclick="plusSlides(-1)"><img src="./images/icon-previous.svg" alt=""></a>
+          <a class="next" id="next" onclick="plusSlides(1)"><img src="./images/icon-next.svg" alt=""></a>
           <div class="row">
             <div class="column">
               <img class="demo cursor" src="./images/image-product-1-thumbnail.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
@@ -80,12 +80,12 @@
           <div class="price">
             <span class="new-price">$125.00</span>
             <span class="change-price">50%</span>
-            <span class="old-price">$250.00</span>
+            <span class="old-price"><s>$250.00</s></span>
           </div>
           <div class="quantity">
-            <img src="./images/icon-previous.svg" alt="Previous">
-            <span>0</span>
-            <img src="./images/icon-next.svg" alt="Next">
+            <img src="./images/icon-minus.svg" alt="Previous" onclick="cart(-1)">
+            <span id="quantity">0</span>
+            <img src="./images/icon-plus.svg" alt="Next" onclick="cart(1)">
           </div>
           <div class="add-cart">
             <img src="./images/icon-cart.svg" alt="Cart">
