@@ -46,16 +46,18 @@
         <ul id="cartlist">
           <li class="shoes-cart" id="shoes-cart">
             <img src="./images/image-product-1-thumbnail.jpg" alt="" class="shoes-cart-img">
-            <div>
-              <span>
+            <div style="display: flex; flex-direction: column; padding-left: 5vw; justify-content: space-between; row-gap: 2vw; color: hsl(220, 14%, 75%);">
+              <span class="h3cart">
                 Autumn Limited Edition Sneakers 
               </span>
-              <span>$<span id="price"></span> x <span id="cartquantity"></span>$<span id="cartprice"></span>
+              <span>$<span id="price"></span> x <span id="cartquantity"></span><span style="color: hsl(220, 13%, 13%); font-weight: 700;"> $</span><span id="cartprice" style="color: hsl(220, 13%, 13%); font-weight: 700;">
+              </span>
               </span>
             </div>
-            <img src="./images/icon-delete.svg" alt="">
+            <img src="./images/icon-delete.svg" alt="" onclick="deletefromcart()">
           </li>
         </ul>
+        <button class="checkout" id="checkout">Checkout</button>
         <span id="carttemp" class="carttemp">Your cart is empty.</span>
       </div>
     </div>

@@ -8,7 +8,7 @@ var cartquantity = document.getElementById('cartquantity');
 var cartprice = document.getElementById('cartprice');
 var cartico = document.getElementById("cart-img");
 var carta = document.getElementById("cart");
-var cart = document.getElementsByClassName('cart');
+var checkout = document.getElementById('checkout');
 var shoescart = document.getElementById("shoes-cart");
 var cartlist = document.getElementById('cartlist');
 
@@ -16,6 +16,7 @@ price.innerText = priceo.innerText;
 cartquantity.innerText = quantity.innerText;
 cartpric = price.innerText * cartquantity.innerText;
 cartprice.innerText = cartpric;
+carta.style.height = "0px";
 
 
 
@@ -73,8 +74,8 @@ else {
 function cart(n){
     prv = document.getElementById('quantity').textContent;
     a = parseInt(prv) + n;
-    if (a < 0){
-        document.getElementById('quantity').textContent = 0;
+    if (a < 1){
+        document.getElementById('quantity').textContent = 1;
     }
     else{
         document.getElementById('quantity').textContent = a;
@@ -95,23 +96,24 @@ function closeNav() {
 
 
 cartico.onclick = function(){
-    if (carta.style.height === "150px"){
-        carta.style.height = "0";
+    if (carta.style.height != "0px"){
+        carta.style.height = "0px";
     }
     else{
         var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
         carta.style.top = t + "px";
-        carta.style.height = "150px";
+        carta.style.height = "50vh";
     }
 }
-
-
 
 function addtocart(){
     c+=parseInt(quantity.textContent);
     if (c > 0){
         shoescart.style.display = "flex";
         temp.style.display = "none";
+        cartquantity.innerText = quantity.innerText;
+        cartpric = parseInt(price.innerText) * c;
+        cartprice.innerText = cartpric;
     } 
     
     else{
@@ -120,20 +122,29 @@ function addtocart(){
     }
 }
 
+function deletefromcart(){
+    c = 0;
+}
+
 window.onclick = function(event) {
-    if (event.target == cart) {
+    if (event.target === cart) {
         console.log("siema");
     }
-  } 
+} 
 
-function refreshcart(){
+window.onclick = () => {
     if (c > 0){
         shoescart.style.display = "flex";
         temp.style.display = "none";
+        cartquantity.innerText = quantity.innerText;
+        cartpric = parseInt(price.innerText) * c + ".00";
+        cartprice.innerText = cartpric;
+        checkout.style.display = "block";
     } 
     
     else{
         shoescart.style.display = "none";
+        checkout.style.display = "none";
         temp.style.display = "block";
     }
 }

@@ -16,8 +16,13 @@ body{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 250px) and (max-width: 600px) {
+    body{
+        margin: 0px;
+    }
+
     .container{
         width: 100vw;
+        overflow: hidden;
     }
 
     .menu{
@@ -109,11 +114,14 @@ body{
 
     .gallery{
         width: 100%;
-        
     }
 
     .container{
         position: relative;
+    }
+
+    .mySlides img{
+        width: 100%;
     }
 
     .prev, .next {
@@ -272,6 +280,7 @@ body{
         margin: 0px;
         padding-top: 5vw;
         padding-left: 5vw;
+        width: 80vw;
         
     }
 
@@ -293,8 +302,14 @@ body{
     .cartbottom{
         margin-top: 0px;
         position: relative;
-        height: calc(150px - 50px);
-        overflow: scroll;
+        height: calc(100% - 50px);
+        overflow: hidden;
+    }
+
+    .h3cart{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .carttemp{
@@ -305,19 +320,29 @@ body{
         transform: translate(-50%,-50%);
         margin: auto;
     }
+
+    .checkout{
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        font-size: 4vw;
+        padding: 4vw;
+        background-color: hsl(26, 100%, 55%);
+        border: 0px;
+        border-radius: 2vw;
+        width: 85vw;
+        position: absolute;
+        left: 5vw;
+        bottom: 5vw;
+        margin: auto;
+    }
 }
 
 @media only screen and (min-width: 601px) {
     .container{
         width: 95vw;
-        margin: auto;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 768px) {
-    .container{
-        width: 90vw;
         margin: auto;
     }
 
@@ -356,6 +381,10 @@ body{
         column-gap: 3vw;
     }
 
+    .butt{
+        display: none;
+    }
+
     .cart-img{
         justify-self: flex-end;
     }
@@ -368,14 +397,19 @@ body{
         height: 50px;
     }
 
+    /* Menu end */
     
+    .wbp{
+        display: flex;
 
-    .gallery{
-        width: 100%;
     }
 
-    .caption{
-        width: 100%;
+    .gallery{
+        max-width: 50%;
+    }
+
+    .text{
+        max-width: 50%;
     }
 
     * {
@@ -423,6 +457,14 @@ body{
     .active,
     .demo:hover {
         opacity: 1;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+    .container{
+        width: 90vw;
+        margin: auto;
     }
 }
 
