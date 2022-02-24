@@ -6,10 +6,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | E-commerce product page</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <div class="menu">
+    <div class="menu" id="menu">
       <div class="menu-left">
         <div class="icon-menu" onclick="openNav()">
           <img src="./images/icon-menu.svg" alt="menu">
@@ -29,12 +30,33 @@
         </div>
       </div>
       <div class="menu-right">
-        <div class="cart-img">
+        <div class="cart-img" id="cart-img">
           <img src="./images/icon-cart.svg" alt="cart">
         </div>
         <div class="profile-img">
           <img src="./images/image-avatar.png" alt="avatar">
         </div>
+      </div>
+    </div>
+    <div class="cart" id="cart">
+      <div>
+        <h3>Cart</h3>
+      </div>
+      <div class="cartbottom">
+        <ul id="cartlist">
+          <li class="shoes-cart" id="shoes-cart">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="shoes-cart-img">
+            <div>
+              <span>
+                Autumn Limited Edition Sneakers 
+              </span>
+              <span>$<span id="price"></span> x <span id="cartquantity"></span>$<span id="cartprice"></span>
+              </span>
+            </div>
+            <img src="./images/icon-delete.svg" alt="">
+          </li>
+        </ul>
+        <span id="carttemp" class="carttemp">Your cart is empty.</span>
       </div>
     </div>
     <div class="wbp">
@@ -81,16 +103,16 @@
         </div>
         <div class="offer">
           <div class="price">
-            <span class="new-price">$125.00</span>
+            <span class="new-price">$<span id="priceo">125.00</span></span>
             <span class="change-price">50%</span>
             <span class="old-price"><s>$250.00</s></span>
           </div>
           <div class="quantity">
             <img src="./images/icon-minus.svg" alt="Previous" onclick="cart(-1)">
-            <span id="quantity">0</span>
+            <span id="quantity">1</span>
             <img src="./images/icon-plus.svg" alt="Next" onclick="cart(1)">
           </div>
-          <div class="add-cart">
+          <div class="add-cart" onclick="addtocart()">
             <img src="./images/icon-cart.svg" alt="Cart">
             <span>Add to cart</span>
           </div>
@@ -99,5 +121,7 @@
     </div>
   </div>
   <script src="./script.js"></script>
+  <script type="text/javascript" src="./cartjs/cart.js"></script>
+  <script type="text/javascript" src="./cartjs/cart.min.js"></script>
 </body>
 </html>

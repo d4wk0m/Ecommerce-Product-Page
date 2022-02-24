@@ -243,6 +243,68 @@ body{
         width: 5vw;
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%) hue-rotate(332deg) brightness(104%) contrast(103%);
     }
+
+    .cart{
+        height: 0px;
+        border-radius: 2vw;
+        background-color: white;
+        position: absolute;
+        width: 96vw;
+        left: 2vw;
+        z-index: 4;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .cart h3{
+        font-size: 4vw;
+        padding-left: 5vw;
+        width: 100%;
+        font-weight: 700;
+        border-bottom: 1px solid hsl(223, 64%, 90%);
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+    }
+
+    .cart ul{
+        list-style-type: none;
+        height: 90px;
+        margin: 0px;
+        padding-top: 5vw;
+        padding-left: 5vw;
+        
+    }
+
+    .shoes-cart{
+        display: none;
+        align-items: center;
+    }
+
+    .shoes-cart-img{
+        height: 20vw;
+        border-radius: 2vw;
+    }
+
+    .shoes-cart div{
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .cartbottom{
+        margin-top: 0px;
+        position: relative;
+        height: calc(150px - 50px);
+        overflow: scroll;
+    }
+
+    .carttemp{
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        margin: auto;
+    }
 }
 
 @media only screen and (min-width: 601px) {
