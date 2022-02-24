@@ -112,8 +112,9 @@ function addtocart(){
         shoescart.style.display = "flex";
         temp.style.display = "none";
         cartquantity.innerText = quantity.innerText;
-        cartpric = parseInt(price.innerText) * c;
-        cartprice.innerText = cartpric;
+        cartpric = parseFloat(price.innerText) * c;
+        cartprice.innerText = cartpric.toString();
+        checkout.style.display = "block";
     } 
     
     else{
@@ -137,8 +138,9 @@ window.onclick = () => {
         shoescart.style.display = "flex";
         temp.style.display = "none";
         cartquantity.innerText = quantity.innerText;
-        cartpric = parseInt(price.innerText) * c + ".00";
-        cartprice.innerText = cartpric;
+        cartpric = parseFloat(price.innerText) * c;
+        console.log(cartpric);
+        cartprice.innerText = cartpric.toString();
         checkout.style.display = "block";
     } 
     
