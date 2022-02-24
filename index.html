@@ -12,21 +12,23 @@
   <div class="container" id="container">
     <div class="menu" id="menu">
       <div class="menu-left">
-        <div class="icon-menu" onclick="openNav()">
+        <div class="icon-menu" onclick="openNav()" ontouchstart="openNav()">
           <img src="./images/icon-menu.svg" alt="menu">
         </div>
         <div class="logo-img">
           <img src="./images/logo.svg" alt="logo">
         </div>
-        <div class="menu-list" id="nav">
-          <div class="butt">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="navcontainer" id="navcontainer">
+          <div class="menu-list" id="nav">
+            <div class="butt">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+            <a class="menu-item">Collections</a>
+            <a class="menu-item">Men</a>
+            <a class="menu-item">Women</a>
+            <a class="menu-item">About</a>
+            <a class="menu-item">Contact</a>
           </div>
-          <a class="menu-item">Collections</a>
-          <a class="menu-item">Men</a>
-          <a class="menu-item">Women</a>
-          <a class="menu-item">About</a>
-          <a class="menu-item">Contact</a>
         </div>
       </div>
       <div class="menu-right">
@@ -100,28 +102,41 @@
       </div>
     </div>
   </div>
-  <div class="cart" id="cart">
-    <div>
-      <h3>Cart</h3>
+  <div id="cart" class="cart-container">
+    <div class="cart" id="carta">
+      <div>
+        <h3>Cart</h3>
+      </div>
+      <div class="cartbottom">
+        <ul id="cartlist">
+          <li class="shoes-cart" id="shoes-cart">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="shoes-cart-img">
+            <div style="display: flex; flex-direction: column; padding-left: 5vw; padding-right: 5vw; justify-content: space-between; row-gap: 2vw; color: hsl(220, 14%, 75%);">
+              <span class="h3cart">
+                Autumn Limited Edition Sneakers 
+              </span>
+              <span>$<span id="price"></span> x <span id="cartquantity"></span><span style="color: hsl(220, 13%, 13%); font-weight: 700;"> $</span><span id="cartprice" style="color: hsl(220, 13%, 13%); font-weight: 700;">
+              </span>
+              </span>
+            </div>
+            <img src="./images/icon-delete.svg" alt="" onclick="deletefromcart()" ontouchstart="deletefromcart()">
+          </li>
+        </ul>
+        <button class="checkout" id="checkout">Checkout</button>
+        <span id="carttemp" class="carttemp">Your cart is empty.</span>
+      </div>
     </div>
-    <div class="cartbottom">
-      <ul id="cartlist">
-        <li class="shoes-cart" id="shoes-cart">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="" class="shoes-cart-img">
-          <div style="display: flex; flex-direction: column; padding-left: 5vw; justify-content: space-between; row-gap: 2vw; color: hsl(220, 14%, 75%);">
-            <span class="h3cart">
-              Autumn Limited Edition Sneakers 
-            </span>
-            <span>$<span id="price"></span> x <span id="cartquantity"></span><span style="color: hsl(220, 13%, 13%); font-weight: 700;"> $</span><span id="cartprice" style="color: hsl(220, 13%, 13%); font-weight: 700;">
-            </span>
-            </span>
-          </div>
-          <img src="./images/icon-delete.svg" alt="" onclick="deletefromcart()">
-        </li>
-      </ul>
-      <button class="checkout" id="checkout">Checkout</button>
-      <span id="carttemp" class="carttemp">Your cart is empty.</span>
+  </div>
+  <button id="myBtn">Open Modal</button>
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
     </div>
+  
   </div>
   <script src="./script.js"></script>
   <script src="./cart.js"></script>

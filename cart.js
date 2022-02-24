@@ -5,15 +5,22 @@ var priceo = document.getElementById('priceo');
 var pricea = document.getElementById('pricea');
 var quantity = document.getElementById('quantity');
 var cartquantity = document.getElementById('cartquantity');
+var carta = document.getElementById('carta');
 var cartprice = document.getElementById('cartprice');
 var cartico = document.getElementById("cart-img");
-var carta = document.getElementById("cart");
+var cartcontainer = document.getElementById("cart");
+var navcontainer = document.getElementById("navcontainer");
+var nav = document.getElementById("nav");
 var checkout = document.getElementById('checkout');
 var shoescart = document.getElementById("shoes-cart");
 var cartlist = document.getElementById('cartlist');
 
 price.innerText = priceo.innerText;
 carta.style.height = "0px";
+shoescart.style.display = "none";
+temp.style.display = "block";
+checkout.style.display = "none";
+
 
 function cart(n){
     prv = document.getElementById('quantity').textContent;
@@ -27,14 +34,17 @@ function cart(n){
 }
 
 cartico.onclick = function(){
-    if (carta.style.height != "0px"){
-        carta.style.height = "0px";
-    }
-    else{
-        var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
-        carta.style.top = t + "px";
-        carta.style.height = "50vh";
-    }
+    cartcontainer.style.display = "block"
+    var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
+    carta.style.top = t + "px";
+    carta.style.height = "40vh";  
+}
+
+cartico.ontouchstart = function(){
+    cartcontainer.style.display = "block"
+    var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
+    carta.style.top = t + "px";
+    carta.style.height = "40vh";  
 }
 
 function addtocart(){
@@ -52,20 +62,79 @@ function addtocart(){
     else{
         shoescart.style.display = "none";
         temp.style.display = "block";
+        checkout.style.display = "none";
     }
 }
 
 function deletefromcart(){
+    shoescart.style.marginLeft = "-100vw"
     c = 0;
+    window.setTimeout(() => {
+        
+        shoescart.style.display = "none";
+        temp.style.display = "block";
+        checkout.style.display = "none";
+      }, 500);
+    
 }
 
-window.onclick = () => {
+window.onclick = function(event) {
+    if (event.target == cartcontainer) {
+        carta.style.height = "0px";
+        window.setTimeout(() => {
+            cartcontainer.style.display = "none";
+          }, 500);
+    }
+    else if (event.target == navcontainer){
+        document.getElementById("nav").style.width = "0";
+        document.getElementById("nav").style.paddingLeft = "0";
+        window.setTimeout(() => {
+            navcontainer.style.display = "none";
+          }, 500);
+    }
+}
+
+window.ontouchstart = function(event) {
+    if (event.target == cartcontainer) {
+        carta.style.height = "0px";
+        window.setTimeout(() => {
+            cartcontainer.style.display = "none";
+          }, 500);
+    }
+    else if (event.target == navcontainer){
+        document.getElementById("nav").style.width = "0";
+        document.getElementById("nav").style.paddingLeft = "0";
+        window.setTimeout(() => {
+            navcontainer.style.display = "none";
+          }, 500);
+    }
+}
+
+
+function openNav() {
+    navcontainer.style.display = "block";
+    window.setTimeout(() => {
+        nav.style.width = "50vw";
+        nav.style.paddingLeft = "5vw";
+        }, 1);
+    
+  }
+  
+function closeNav() {
+    document.getElementById("nav").style.width = "0";
+    document.getElementById("nav").style.paddingLeft = "0";
+    window.setTimeout(() => {
+        navcontainer.style.display = "none";
+        }, 500);
+}
+
+/*
+window.onclick = function(){
     if (c > 0){
         shoescart.style.display = "flex";
         temp.style.display = "none";
         cartquantity.innerText = c;
         cartpric = parseFloat(price.innerText) * c;
-        console.log(cartpric);
         cartprice.innerText = cartpric.toString() + ".00";
         checkout.style.display = "block";
     } 
@@ -76,5 +145,6 @@ window.onclick = () => {
         temp.style.display = "block";
     }
 }
+*/
 
 
