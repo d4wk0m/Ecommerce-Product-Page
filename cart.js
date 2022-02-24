@@ -14,6 +14,7 @@ var nav = document.getElementById("nav");
 var checkout = document.getElementById('checkout');
 var shoescart = document.getElementById("shoes-cart");
 var cartlist = document.getElementById('cartlist');
+var cartilosc = document.getElementById('cartilosc');
 
 price.innerText = priceo.innerText;
 carta.style.height = "0px";
@@ -49,7 +50,14 @@ cartico.ontouchstart = function(){
 
 function addtocart(){
     c+=parseInt(quantity.textContent);
-    
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.setTimeout(() => { 
+        cartcontainer.style.display = "block"
+        var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
+        carta.style.top = t + "px";
+        carta.style.height = "40vh";  
+      }, 200);
     if (c > 0){
         shoescart.style.display = "flex";
         temp.style.display = "none";
@@ -57,6 +65,8 @@ function addtocart(){
         cartpric = parseFloat(price.innerText) * c;
         cartprice.innerText = cartpric.toString() + ".00";
         checkout.style.display = "block";
+        cartilosc.style.display = "block";
+        cartilosc.innerText = c;
     } 
     
     else{
@@ -74,6 +84,7 @@ function deletefromcart(){
         shoescart.style.display = "none";
         temp.style.display = "block";
         checkout.style.display = "none";
+        shoescart.style.marginLeft = "0"
       }, 500);
     
 }

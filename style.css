@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Kumbh Sans', sans-serif;
     margin: 0px;
@@ -42,12 +46,12 @@ body{
         align-items: center;
     }
 
-    .menu-right{
-        column-gap: 3vw;
-    }
-
     .menu-left{
         column-gap: 5vw;
+    }
+
+    .menu-right{
+        column-gap: 3vw;
     }
 
     .icon-menu{
@@ -108,8 +112,25 @@ body{
     }
     
     .cart-img{
-        justify-self: flex-end;
+        display: flex;
+        align-items: center;
         cursor: pointer;
+    }
+
+    .cart-img img{
+        width: 6vw;
+    }
+
+    .cartilosc{
+        position: relative;
+        top: -4vw;
+        left: -3vw;
+        font-size: 2.5vw;
+        color: white;
+        padding: 0.5vw 2vw 0.5vw 2vw;
+        border-radius: 4vw;
+        background-color: hsl(26, 100%, 55%);
+        display: none;
     }
 
     .profile-img{
@@ -117,7 +138,7 @@ body{
     }
 
     .profile-img img{
-        height: 32px;
+        width: 8vw;
     }
 
     .wbp{
