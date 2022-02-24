@@ -85,6 +85,8 @@ function deletefromcart(){
         temp.style.display = "block";
         checkout.style.display = "none";
         shoescart.style.marginLeft = "0"
+        cartilosc.style.display = "none";
+        cartilosc.innerText = c;
       }, 500);
     
 }
