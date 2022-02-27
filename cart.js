@@ -38,14 +38,25 @@ cartico.onclick = function(){
     cartcontainer.style.display = "block"
     var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
     carta.style.top = t + "px";
-    carta.style.height = "40vh";  
+
+    if (window.screen.width >= 600){
+        carta.style.height = "60vh";  
+    }
+    else{
+        carta.style.height = "50vh";  
+    }
 }
 
 cartico.ontouchstart = function(){
     cartcontainer.style.display = "block"
     var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
     carta.style.top = t + "px";
-    carta.style.height = "40vh";  
+    if (window.screen.width >= 600){
+        carta.style.height = "60vh";  
+    }
+    else{
+        carta.style.height = "50vh";  
+    }  
 }
 
 function addtocart(){
@@ -56,7 +67,12 @@ function addtocart(){
         cartcontainer.style.display = "block"
         var t = document.getElementById('menu').offsetHeight + 0.02 * screen.width;
         carta.style.top = t + "px";
-        carta.style.height = "40vh";  
+        if (window.screen.width >= 600){
+            carta.style.height = "60vh";  
+        }
+        else{
+            carta.style.height = "50vh";  
+        }
       }, 200);
     if (c > 0){
         shoescart.style.display = "flex";

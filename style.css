@@ -10,12 +10,6 @@ body{
     min-width: 250px;
 }
 
-.company{
-    color: hsl(26, 100%, 55%);
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -101,6 +95,7 @@ body{
     .menu-list a{
         text-decoration: none;
         color: hsl(220, 13%, 13%);
+        cursor: pointer;
     }
 
     .butt a{
@@ -150,7 +145,7 @@ body{
         width: 100%;
     }
 
-    .container{
+    .containergal{
         position: relative;
     }
 
@@ -196,7 +191,6 @@ body{
     
     .text{
         padding:5vw;
-        color: hsl(220, 13%, 13%);
     }
 
     .company{
@@ -204,10 +198,11 @@ body{
     }
 
     .caption h2{
-        margin-top: 0.5rem;
+        margin-top: 2vw;
         font-size: 8vw;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        margin-bottom: 2vw;
+        color: hsl(220, 13%, 13%);
     }
 
     .caption p{
@@ -282,7 +277,7 @@ body{
     }
 
     .add-cart:active{
-        background-color: hsl(25, 100%, 94%);
+        background-color: hsl(26, 100%, 70%);
     }
 
     .add-cart img{
@@ -327,7 +322,7 @@ body{
 
     .cart ul{
         list-style-type: none;
-        height: 90px;
+        height: auto;
         margin: 0px;
         padding-top: 5vw;
         padding-left: 5vw;
@@ -395,11 +390,15 @@ body{
     }
 
     .checkout:active{
-        background-color: hsl(25, 100%, 94%);
+        background-color: hsl(26, 100%, 70%);
     }
 }
 
 @media only screen and (min-width: 601px) {
+    body{
+        margin-bottom: 5vh;
+    }
+
     .container{
         width: 95vw;
         margin: auto;
@@ -410,9 +409,8 @@ body{
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid grey;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
         column-gap: 5vw;
+        height: 15vw;
     }
 
     .menu-left,
@@ -425,19 +423,55 @@ body{
         column-gap: 3vw;
     }
 
+    .navcontainer{
+        height: 100%;
+    }
+
     .menu-left{
-        column-gap: 5vw;
+        column-gap: 3vw;
+        height: 100%;
     }
 
     .icon-menu{
         display: none;
     }
 
+    .logo-img img{
+        width: 20vw;
+    }
+
     .menu-list{
         display: flex;
+        align-items: center;
         font-weight: 400;
         color: hsl(220, 14%, 75%);
         column-gap: 3vw;
+        font-size: 2vw;
+        height: 100%;
+    }
+
+    .menu-container{
+        text-decoration: none;
+        pointer-events: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-container:hover{
+        -webkit-box-shadow: inset -0px -0.5vw 0px 0px hsl(26, 100%, 55%);
+        -moz-box-shadow: inset -0px -0.5vw 0px 0px hsl(26, 100%, 55%);
+        box-shadow: inset -0px -0.5vw 0px 0px hsl(26, 100%, 55%);
+    }
+
+    .menu-item:hover{
+        color: hsl(219, 9%, 45%)
+    }
+
+    .menu-item{
+        height: fit-content;
+        cursor: pointer;
+        pointer-events:all;
     }
 
     .butt{
@@ -445,78 +479,345 @@ body{
     }
 
     .cart-img{
-        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
+
+    .cart-img img{
+        width: 4vw;
+    }
+
+    .cartilosc{
+        position: relative;
+        top: -2.8vw;
+        left: -2vw;
+        font-size: 1.5vw;
+        color: white;
+        padding: 0.5vw 1.5vw 0.5vw 1.5vw;
+        border-radius: 4vw;
+        background-color: hsl(26, 100%, 55%);
+        display: none;
+    }
+
 
     .profile-img{
         justify-self: flex-end;
     }
 
     .profile-img img{
-        height: 50px;
+        width: 7vw;
+    }
+
+    .profile-img img:hover{
+        cursor: pointer;
+        border-radius: 50%;
+        border: 0.4vw solid hsl(26, 100%, 55%);
     }
 
     /* Menu end */
     
     .wbp{
         display: flex;
-
+        flex-direction: column;
+        margin-top: 10vw;
     }
 
     .gallery{
-        max-width: 50%;
+        width: 100%;
+        overflow: hidden;
     }
 
     .text{
-        max-width: 50%;
+        margin-top: 5vw;
+        width: 100%;
     }
 
     * {
         box-sizing: border-box;
     }
-    
-    /* Position the image container (needed to position the left and right arrows) */
-    .container {
+
+    .containergal {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        row-gap: 2vw;
     }
     
-    /* Hide the images by default */
     .mySlides {
         display: none;
     }
+
+    .mySlides img{
+        width: 100%;
+        border-radius: 2vw;
+    }
     
-    /* Add a pointer when hovering over the thumbnail images */
     .cursor {
         cursor: pointer;
     }
     
-    /* Next & previous buttons */
     .prev,
     .next {
         display: none;
     }
-    
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
+
+    .row{
+        display: flex;
+        column-gap: 2vw;
     }
-    
-    /* Six columns side by side */
-    .column {
-        float: left;
-        width: 16.66%;
+
+    .column{
+        height: fit-content;
     }
-    
-    /* Add a transparency effect for thumnbail images */
-    .demo {
-        opacity: 0.6;
+
+    .column img{
+        border-radius: 2vw;
+        width: 100%;
+        display: block;
+    }
+
+    .column:hover{
+        -webkit-box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        -moz-box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        border-radius: 2vw;
     }
     
     .active,
     .demo:hover {
-        opacity: 1;
+        opacity: 0.4;
     }
+
+    .activec{
+        -webkit-box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        -moz-box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        box-shadow: inset 0px 0px 0px 0.3vw hsl(26, 100%, 55%);
+        border-radius: 2vw;
+    }
+
+    .company{
+        color: hsl(26, 100%, 55%);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .company{
+        font-size: 3vw;
+    }
+    
+    .caption h2{
+        margin-top: 0.5rem;
+        font-size: 6vw;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .caption p{
+        font-weight: 400;
+        font-size: 3.5vw;
+        color: hsl(219, 9%, 45%);
+    }
+    
+    .price{
+        display: flex;
+        column-gap: 4vw;
+        align-items: center;
+    }
+    
+    .new-price{
+        font-size: 5.5vw;
+        font-weight: 700;
+    }
+    
+    .change-price{
+        font-size: 3vw;
+        color: hsl(26, 100%, 55%);
+        background-color: hsl(25, 100%, 94%);
+        border-radius: 1vw;
+        padding: 1vw;
+        font-weight: 700;
+    }
+    
+    .old-price{
+        margin-left: auto;
+        margin-right: 5vw;
+        font-size: 3vw;
+        color: hsl(219, 9%, 45%);
+        font-weight: 700;
+    }
+    
+    .quantity{
+        margin-top: 5vw;
+        background-color: hsl(223, 64%, 98%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4vw;
+        border-radius: 2vw;
+    }
+    
+    .quantity span{
+        font-size: 4vw;
+        font-weight: 700;
+    }
+    
+    .quantity img{
+        width: 3vw;
+    }
+    
+    .quantity img:hover{
+        cursor: pointer;
+    }
+    
+    .add-cart{
+        margin-top: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 3vw;
+        background-color: hsl(26, 100%, 55%);
+        color: white;
+        padding: 4vw;
+        border-radius: 2vw;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 3.5vw;
+    }
+    
+    .add-cart:active{
+        background-color: hsl(26, 100%, 70%);
+    }
+    
+    .add-cart img{
+        width: 5vw;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%) hue-rotate(332deg) brightness(104%) contrast(103%);
+    }
+    
+    .cart-container{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100vw; /* Full width */
+        height: 100vh; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .cart{
+        height: 0px;
+        border-radius: 2vw;
+        background-color: white;
+        position: absolute;
+        width: 96vw;
+        left: 2vw;
+        z-index: 4;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    
+    .cart h3{
+        font-size: 5vw;
+        padding-left: 5vw;
+        width: 100%;
+        font-weight: 700;
+        border-bottom: 1px solid hsl(223, 64%, 90%);
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+    }
+    
+    .cart ul{
+        list-style-type: none;
+        height: auto;
+        margin: 0px;
+        padding-top: 5vw;
+        padding-left: 5vw;
+        overflow: hidden;
+        
+    }
+    
+    .shoes-cart{
+        display: none;
+        align-items: center;
+        width: 85vw;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+    }
+    
+    
+    .shoes-cart-img{
+        height: 20vw;
+        border-radius: 2vw;
+    }
+    
+    .shoes-cart div{
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .trash{
+        width: 4vw;
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+    }
+    
+    .cartbottom{
+        margin-top: 0px;
+        position: relative;
+        height: calc(100% - 10vw);
+        overflow: hidden;
+    }
+    
+    .h3cart{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 4vw;
+    }
+
+    .cartaprice{
+        font-size: 3vw;
+    }
+    
+    .carttemp{
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-100%);
+        margin: auto;
+        font-size: 4vw;
+    }
+    
+    .checkout{
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        font-size: 4vw;
+        padding: 4vw;
+        background-color: hsl(26, 100%, 55%);
+        border: 0px;
+        border-radius: 2vw;
+        width: 85vw;
+        position: absolute;
+        left: 5vw;
+        bottom: 5vw;
+        margin: auto;
+    }
+    
+    .checkout:active{
+        background-color: hsl(26, 100%, 70%);
+    }
+    
+
+    
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
