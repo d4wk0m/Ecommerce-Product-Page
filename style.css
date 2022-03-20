@@ -8,6 +8,7 @@ body{
     font-family: 'Kumbh Sans', sans-serif;
     margin: 0px;
     min-width: 250px;
+    background: white;
 }
 
 
@@ -391,6 +392,10 @@ body{
 
     .checkout:active{
         background-color: hsl(26, 100%, 70%);
+    }
+
+    .modal{
+        display: none;
     }
 }
 
@@ -842,6 +847,7 @@ body{
     .container{
         width: 90vw;
         margin: auto;
+        max-width: 1200px;
     }
 
     .wbp{
@@ -970,15 +976,15 @@ body{
         border-radius: 2vw;
         background-color: white;
         position: absolute;
-        width: 96vw;
-        left: 2vw;
+        width: 60vw;
+        left: 20vw;
         z-index: 4;
         overflow: hidden;
         transition: 0.5s;
     }
     
     .cart h3{
-        font-size: 4vw;
+        font-size: 3vw;
         padding-left: 5vw;
         width: 100%;
         font-weight: 700;
@@ -1000,14 +1006,14 @@ body{
     .shoes-cart{
         display: none;
         align-items: center;
-        width: 85vw;
+        width: 85%;
         transition: 0.5s;
         -webkit-transition: 0.5s;
     }
     
     
     .shoes-cart-img{
-        height: 20vw;
+        height: 8vw;
         border-radius: 2vw;
     }
     
@@ -1017,7 +1023,7 @@ body{
     }
 
     .trash{
-        width: 4vw;
+        width: 3vw;
         display: block;
         margin-left: auto;
         cursor: pointer;
@@ -1034,11 +1040,11 @@ body{
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: 4vw;
+        font-size: 2vw;
     }
 
     .cartaprice{
-        font-size: 3vw;
+        font-size: 2vw;
     }
     
     .carttemp{
@@ -1048,7 +1054,7 @@ body{
         top: 50%;
         transform: translate(-50%,-100%);
         margin: auto;
-        font-size: 4vw;
+        font-size: 2vw;
     }
     
     .checkout{
@@ -1057,15 +1063,15 @@ body{
         text-align: center;
         color: white;
         font-weight: 700;
-        font-size: 4vw;
-        padding: 4vw;
+        font-size: 2vw;
+        padding: 3vw;
         background-color: hsl(26, 100%, 55%);
         border: 0px;
         border-radius: 2vw;
-        width: 85vw;
+        width: 85%;
         position: absolute;
         left: 5vw;
-        bottom: 5vw;
+        bottom: 2vw;
         margin: auto;
     }
     
